@@ -18,10 +18,9 @@ jobs:
           url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
           curl -sSL $url | tar -xz -C bk/
           cd bk && ./mdbook build
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: bk/book/
-          name: 'github-pages'
       - uses: actions/configure-pages@v5
       - id: deployment 
         uses: actions/deploy-pages@v4
