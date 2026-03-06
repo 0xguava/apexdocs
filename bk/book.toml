@@ -1,4 +1,8 @@
 [book]
-title = "ApexaIQ Internship docs"
+title = "ApexaIQ docs"
 authors = ["0xguava"]
 language = "en"
+
+[output.html]
+site-url = "/apexdocs"
+git-repository-url = "https://github.com/0xguava/apexdocs/tree/master/bk"
