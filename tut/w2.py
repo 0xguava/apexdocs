@@ -31,7 +31,7 @@ class concurrentExec:
             f += 1
 
 
-    def con_exec(self, tasks, time_limit):
+    def con_exec(self, time_limit):
         threads = []
 
         for t in self.tasks:
@@ -46,7 +46,7 @@ class concurrentExec:
 
 if __name__ == "__main__":
     exe = concurrentExec(tasks)
-    exe.con_exec(tasks, time_limit=2)
+    exe.con_exec(time_limit=2)
 
     print(f"""Execution audit:
     tasks completed: {s}
