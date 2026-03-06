@@ -21,6 +21,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           path: bk/book/
+          name: 'github-pages'
       - uses: actions/configure-pages@v5
       - id: deployment 
         uses: actions/deploy-pages@v4
