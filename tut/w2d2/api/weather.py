@@ -1,11 +1,8 @@
-""" Assignment of w2d2: APIs """
 
 import requests as re
 from flask import Flask, request, jsonify
-import time
 from secrets import secrets
-
-CACHE_TIME = 600
+from __main__ import app
 
 class weather_api:
     APIKEY = secrets['WEATHER']
@@ -24,22 +21,14 @@ class weather_api:
         url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={self.APIKEY}"
         weather_info = re.get(url).json() 
         cache = {key: weather_info[key] for key in ['name', 'main', 'weather']}
-        cache.update({'timestamp' : time.time()})
+        """ cache.update({'timestamp' : time.time()}) """
         return jsonify(cache)
 
-class github_api:
+forecast = weather_api()
 
-
-app = Flask(__name__)
-
-forcast = weather_api()
-
-@app.get("/weather") 
+@app.get("/weather")
 def weather():
     city = request.args.get('city')
     if not city:
         return "Please provide query for city name", 400
-    return forcast.get_weather(city) 
-
-if __name__ == "__main__":
-    app.run()
+    return forecast.get_weather(city) 
