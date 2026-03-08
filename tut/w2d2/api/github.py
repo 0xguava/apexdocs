@@ -1,6 +1,6 @@
 
 import requests as re
-from flask import Flask, request, jsonify
+from flask import request
 from secrets import secrets
 from __main__ import app
 

@@ -7,6 +7,7 @@ app = Flask(__name__)
 import api.weather
 import api.github
 import api.movie_search
+import api.news
 
 if __name__ == "__main__":
     app.run()
