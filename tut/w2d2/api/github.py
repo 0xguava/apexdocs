@@ -1,7 +1,6 @@
 
 import requests as re
 from flask import Flask, request, jsonify
-import time
 from secrets import secrets
 from __main__ import app
 
