@@ -2,7 +2,9 @@ name: Deploy repo docs to site.
 
 on:
   push: 
-    branches: master
+    paths:
+      - 'bk/**'
+      - 'docs'
 
 jobs:
   deploy:
