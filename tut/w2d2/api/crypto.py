@@ -1,3 +1,4 @@
+""" crypto currency rate tracker """
 
 import requests as re
 from flask import request

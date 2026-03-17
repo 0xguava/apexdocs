@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """ Assignment of w2d2: APIs """
 
 from flask import Flask
@@ -15,4 +16,4 @@ import api.quote
 import api.ip
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")
