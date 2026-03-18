@@ -1,3 +1,4 @@
+""" github analytics api """
 
 import requests as re
 from flask import request
@@ -20,6 +21,7 @@ class github_api:
     }
 
     def get_stats(self, user, repo, stat):
+        """ git analytics fetch """
         match stat:
             case 'weekly_commit': 
                 stat = 'code_frequency'
@@ -33,6 +35,7 @@ git_analytics = github_api()
 
 @app.get("/github")
 def github():
+    """ flask response """
     user = request.args.get('user')
     repo = request.args.get('repo')
     stat = request.args.get('stat')

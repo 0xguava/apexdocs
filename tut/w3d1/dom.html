@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM demo</title>
+</head>
+<body>
+
+    <p id="message">Hello! Click button to change</p>
+    <button id="action-btn">Click Me</button>
+
+    <script>
+        const textElement = document.getElementById('message');
+        const buttonElement = document.getElementById('action-btn');
+
+        buttonElement.addEventListener('click', function() {
+            
+          textElement.textContent = "You clicked the button";
+          
+          textElement.style.color = "blue";
+          textElement.style.fontWeight = "bold";
+          textElement.style.backgroundColor = "#f0f0f0";
+            
+        });
+    </script>
+
+</body>
+</html>

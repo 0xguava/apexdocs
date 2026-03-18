@@ -1,3 +1,4 @@
+""" currency conversion api """
 
 import requests as re
 from flask import request, jsonify
@@ -5,9 +6,11 @@ from secrets import secrets
 from __main__ import app
 
 class currency_conversion_api:
+    """ currency conversion api """
     APIKEY = secrets['CURRENCY']
 
     def get_conversion(self, base_code, target_code, amt):
+        """ currency rate fetch and conversion function """
         url = f"https://v6.exchangerate-api.com/v6/{self.APIKEY}/pair/{base_code}/{target_code}"
         
         if amt:
@@ -28,6 +31,7 @@ conversion_api = currency_conversion_api()
 
 @app.get('/currency')
 def currency_ex():
+    """ flask response """
     base_code = request.args.get('base')
     target_code = request.args.get('to')
     amt = request.args.get('amt')
