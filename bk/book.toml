@@ -4,5 +4,6 @@ authors = ["0xguava"]
 language = "en"
 
 [output.html]
+default-theme = "Coal"
 site-url = "/apexdocs"
 git-repository-url = "https://github.com/0xguava/apexdocs/tree/master/bk"
