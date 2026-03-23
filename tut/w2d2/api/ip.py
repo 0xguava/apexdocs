@@ -14,11 +14,15 @@ class geo_lookup_api:
         else:
             url = f"http://ip-api.com/json/"
         
-        re_temp = re.get(url).json()
         result = {}
 
-        for t in ['query', 'country', 'region', 'city', 'zip', 'lat', 'lon', 'isp']:
-            result.update({ t : re_temp[t]})
+        try:
+            re_temp = re.get(url).json()
+
+            for t in ['query', 'country', 'region', 'city', 'zip', 'lat', 'lon', 'isp']:
+                result.update({ t : re_temp[t]})
+        except: 
+            result.update({ 'error' : 'lookup failed'})
 
         return result
 
